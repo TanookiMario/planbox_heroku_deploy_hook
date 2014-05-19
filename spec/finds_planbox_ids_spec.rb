@@ -1,7 +1,7 @@
-require 'spec_helper'
-require_relative '../lib/finds_pivotal_ids'
+require_relative 'spec_helper'
+require_relative '../lib/finds_planbox_ids'
 
-describe FindsPivotalIds do
+describe FindsPlanboxIds do
 
   let(:git_log) {
 <<GITLOG
@@ -15,7 +15,7 @@ describe FindsPivotalIds do
 GITLOG
   }
 
-  subject { FindsPivotalIds.new(git_log).find }
+  subject { FindsPlanboxIds.new(git_log).find }
 
   it { should include(43143043) }
   it { should include(37341713) }
